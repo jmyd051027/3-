@@ -148,3 +148,77 @@ NORMAL 리스트에 카드로 생성되었다. 이를 통해 자동화가 의도
 대로 유지되며, 분기 조건만 교체하면 된다는 것이다. 즉, 본 실습은 실무 자동화로 확장 가능
 한 기본 구조를 구현했다는 데 의의가 있다.
 
+2번과제
+1. IFTTT 자동화 — 과정과 결과
+구현 과정
+① IFTTT 가입 및 로그인
+② [Create] 버튼 클릭 → 새 Applet 만들기
+③ If This (트리거) 설정
+ → "Date & Time" 서비스 선택
+ → "Every day at" 선택
+ → 원하는 시간 지정 (예: 오전 9시)
+④ Then That (액션) 설정
+ → "Email" 서비스 선택
+ → "Send me an email" 선택
+ → 메일 제목/본문 작성
+⑤ Applet 저장 및 활성화
+결과
+- 매일 지정한 시간에 등록된 이메일 주소로 자동 메일 발송 확인
+- 별도의 조작 없이 예약된 시간마다 반복 실행됨
+- Applet 활성화 상태에서 지속적으로 작동
+IFTTT의 Date & Time 트리거와 Email 액션을 연결하여, 매일 지정한 시각에 자동으로 이메
+일이 발송되는 Applet을 구현하였다. 테스트 결과 설정한 시간에 메일이 정상 수신되었으며, 별도의 조작 없이 매일 반복 실행됨을 확인함
+2. 왜 IFTTT를 사용했나
+① 가장 쉬운 구조
+ → "If This, Then That" 단 두 단계만 존재
+ → 트리거 1개 + 액션 1개, 3분이면 완성
+② 시간 기반 트리거가 무료
+ → Date & Time 트리거를 무료 플랜에서 제공
+ → "매일 특정 시간" 같은 예약 실행에 최적
+③ 세 도구의 성격 비교가 가능
+ → Zapier/Make: 조건 분기가 있는 복잡한 자동화
+ → IFTTT: 단순 반복 자동화
+ → 도구별 적합한 용도의 차이를 보여주기 좋음
+(단,IFTTT플랜은 Applet 개수 제한(2~3개)이 있음)
+Zapier와 Make로는 "조건에 따라 분기하는 복잡한 자동화"를, IFTTT로는 "단순하고 규칙적인
+반복 자동화"를 구현함으로써, 자동화 도구마다 적합한 영역이 다르다.
+Cancel Edit Applet
+Want to publish this Applet so anyone can use it? Click here
+If Every day at
++
+Then Send me an email
+Pro +
+Update
+Edit Delete
+Edit Delete
+If Every day at
+11:00 AM, then
+Send me an email at
+jmyd051027@nave
+r.com
+by jmyd051027
+Connected
+IFTTT Daily Test
+보낸사람 Date & Time via IFTTT <action@ifttt.com>
+받는사람 jmyd051027@naver.com
+2026년 7월 14일 (화) 오후 12:31
+영어 한국어 번역하기
+This email is automatically sent every day using IFTTT.
+Manage
+Unsubscribe from these notifications or sign in to manage your Email service.
+Connected
+How this automation works
+If
+Then
+Every day at
+Polling trigger This Trigger
+fires every single day at a specific
+time set by you.
+Trigger ingredients
+CheckTime
+Send me an email
+Action This Action will send
+you an HTML based email.
+Images and links are supported.
+Action fields
+subject body
